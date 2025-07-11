@@ -162,18 +162,23 @@ nav ul li a:hover {
 
 /* --- Hero Section --- */
 .hero-formal {
-    background: url('heap-nice-stationery_23-2147864663.avif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('heap-nice-stationery_23-2147864663.avif') center/cover no-repeat;
     border-bottom: 2px solid var(--neutral-grey);
     text-align: center;
     padding: 4.5em 1em 3.5em 1em; /* More padding */
     position: relative;
     overflow: hidden; /* To contain any pseudo-elements */
+/* Remove pink overlay for a crisp image */
+/* If you want a subtle overlay, uncomment below and adjust color/transparency */
+/*
+.hero-formal::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,79,154,0.12); /* Very subtle pink, adjust as needed */
+    z-index: 0;
+}
+*/
 }
 
 .hero-content h1 {
@@ -289,8 +294,8 @@ nav ul li a:hover {
     border-radius: 24px; /* More rounded corners */
     border: 1px solid var(--neutral-grey);
     position: relative; /* For potential future absolute positioning of elements */
-/* Removed stray closing brace that caused a syntax error */
 }
+/* Removed stray closing brace that caused a syntax error */
 /* Location Section */
 .location-formal {
     max-width: 900px;
