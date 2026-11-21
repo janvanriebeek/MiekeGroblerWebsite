@@ -1,535 +1,797 @@
-/* --- Prices Section --- */
-.prices-formal {
-    max-width: 900px;
-    margin: 4em auto 3em auto;
-    background: var(--neutral-white);
-    box-shadow: 0 8px 25px 0 rgba(34,48,78,0.08);
-    padding: 3em;
-    border-radius: 24px;
-    border: 1px solid var(--neutral-grey);
-    position: relative;
-}
-.prices-formal h3 {
-    color: var(--primary-pink);
-    margin-bottom: 0.6em;
-    font-size: 1.8em;
-    font-family: 'Merriweather', serif;
-    font-weight: 700;
-    text-align: center;
-    position: relative;
-    padding-bottom: 0.3em;
-}
-.prices-formal h3::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent-green); /* Now black */
-    margin: 10px auto 0 auto;
-    border-radius: 2px;
-}
-.price-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5em;
-    justify-content: center;
-    padding-top: 1em;
-}
-.price-item {
-    background: var(--neutral-white);
-    padding: 2.5em;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1px solid var(--neutral-grey);
-}
-.price-item h4 {
-    color: var(--accent-green); /* Now black */
-    font-size: 1.4em;
-    font-family: 'Merriweather', serif;
-    margin-bottom: 0.6em;
-}
-.price-item p {
-    font-size: 1.15em;
-    color: var(--dark-text);
-    font-weight: 600;
-}
-.price-note {
-    text-align: center;
-    margin-top: 2em;
-    color: var(--primary-pink);
-    font-size: 1.1em;
-    font-weight: 500;
-}
-/* --- General Body & Typography --- */
+/* Mieke Grobler — private tutor site
+   Asset paths are relative so the page still works on a custom domain. */
 
 :root {
-    --primary-pink: #ff4f9a; /* Main pink */
-    --accent-pink-light: #fff6fa; /* Soft light pink */
-    --accent-pink-dark: #d72660; /* Deep accent pink */
-    --accent-green: #222; /* Black replaces green */
-    --accent-grey: #f7f7f7; /* Light grey for backgrounds */
+    --primary-pink: #ff4f9a;
+    --accent-pink-light: #fff6fa;
+    --accent-pink-dark: #d72660;
+    --ink: #222;
+    --page: #f7f7f7;
     --neutral-white: #fff;
     --neutral-grey: #e0e0e0;
-    --dark-text: #222;
-    --light-text: #fff;
+    --whatsapp: #128c7e;
+    --whatsapp-dark: #075e54;
+    --whatsapp-bright: #25d366;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background: var(--neutral-white);
-    color: var(--dark-text);
-    font-family: 'Open Sans', Arial, sans-serif; /* Ensuring Open Sans for body */
     margin: 0;
-    line-height: 1.75; /* Slightly increased line height for readability */
-    font-size: 1.12em; /* Slightly larger base font size */
-    -webkit-font-smoothing: antialiased; /* Smoother font rendering */
-    -moz-osx-font-smoothing: grayscale; /* Smoother font rendering for Firefox */
+    background: var(--page);
+    color: var(--ink);
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* --- Navigation --- */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--accent-pink-dark);
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent-pink-dark);
+    outline-offset: 3px;
+}
+
+.skip-link {
+    position: absolute;
+    left: 0.75rem;
+    top: -4rem;
+    z-index: 300;
+    background: var(--neutral-white);
+    color: var(--ink);
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0.75rem;
+}
+
+section {
+    scroll-margin-top: 5.5rem;
+}
+
+/* --- Header --- */
 header.sticky-header {
-    background: rgba(255,255,255,0.85); /* Slightly transparent for modern look */
-    backdrop-filter: blur(8px); /* Blur effect for contrast */
-    border-bottom: 1px solid var(--neutral-grey);
-    padding: 1.1em 0 1em 0; /* More vertical padding */
-    box-shadow: 0 4px 24px rgba(0,0,0,0.10); /* More visible shadow for header */
     position: sticky;
     top: 0;
     z-index: 100;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--neutral-grey);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
 }
 
 nav {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0.75rem 1.1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1em;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 0.7em;
+    gap: 0.55rem 0.8rem;
 }
 
 .nav-logo {
-    font-family: 'Merriweather', serif;
-    font-weight: 800; /* Bolder logo */
-    font-size: 1.6em; /* Slightly larger logo */
-    color: var(--primary-pink);
-    letter-spacing: 1.2px; /* Increased letter spacing */
-    transition: color 0.3s ease; /* Smooth transition for logo color */
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
-.nav-logo:hover {
-    color: var(--accent-green); /* Now black on hover */
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: var(--dark-text);
-    font-weight: 600; /* Bolder navigation links */
-    font-size: 1.12em;
-    padding: 0.6em 1.2em; /* More padding for links */
-    border-radius: 18px; /* Softer corners */
-    transition: background 0.25s, color 0.25s, box-shadow 0.18s, transform 0.15s;
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    box-shadow: 0 2px 8px rgba(34,48,78,0.04);
-}
-
-nav ul li a:hover {
-    background: var(--accent-green); /* Now black */
-    color: var(--light-text);
-    transform: translateY(-4px) scale(1.07); /* More pronounced lift and scale */
-    box-shadow: 0 6px 18px rgba(34,48,78,0.10);
-    background: var(--primary-pink);
-    color: var(--light-text);
-    box-shadow: 0 4px 16px rgba(255,79,154,0.12);
-    border-bottom: 3px solid var(--accent-yellow);
+    order: 1;
+    font-family: "Merriweather", serif;
     font-weight: 800;
+    font-size: 1.35rem;
+    color: var(--primary-pink);
+    letter-spacing: 0.02em;
+    text-decoration: none;
 }
 
-/* --- Hero Section --- */
-.hero-formal {
-    background: url('heap-nice-stationery_23-2147864663.avif') center/cover no-repeat;
-    border-bottom: 2px solid var(--neutral-grey);
-    text-align: center;
-    padding: 4.5em 1em 3.5em 1em; /* More padding */
-    position: relative;
-    overflow: hidden; /* To contain any pseudo-elements */
-/* Remove pink overlay for a crisp image */
-/* If you want a subtle overlay, uncomment below and adjust color/transparency */
-/*
-.hero-formal::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255,79,154,0.12); /* Very subtle pink, adjust as needed */
-    z-index: 0;
+.nav-logo:hover {
+    color: var(--ink);
 }
-*/
+
+nav ul {
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.15rem;
+    list-style: none;
+    margin: 0 0 0 auto;
+    padding: 0;
+}
+
+nav ul a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+nav ul a:hover,
+nav ul a.active {
+    background: var(--primary-pink);
+    color: var(--neutral-white);
+}
+
+.lang-toggle {
+    order: 3;
+    display: inline-flex;
+    border: 2px solid var(--primary-pink);
+    border-radius: 999px;
+    overflow: hidden;
+    flex: 0 0 auto;
+}
+
+.lang-toggle button {
+    border: 0;
+    background: transparent;
+    color: var(--accent-pink-dark);
+    font-weight: 800;
+    font-family: inherit;
+    font-size: 0.92rem;
+    padding: 0.35rem 0.7rem;
+    cursor: pointer;
+}
+
+.lang-toggle button.is-active {
+    background: var(--primary-pink);
+    color: var(--neutral-white);
+}
+
+.nav-toggle {
+    display: none;
+    order: 4;
+    align-items: center;
+    gap: 0.4rem;
+    border: 2px solid var(--primary-pink);
+    background: var(--neutral-white);
+    color: var(--accent-pink-dark);
+    font-family: inherit;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+}
+
+/* --- Hero --- */
+.hero-formal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 540px;
+    padding: 3.5rem 1rem;
+    background: #ffe4f0;
+    overflow: hidden;
+    border-bottom: 1px solid #f3d0e0;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    width: min(720px, 100%);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 2.1rem 1.4rem 1.8rem;
+    box-shadow: 0 12px 32px rgba(180, 40, 90, 0.12);
 }
 
 .hero-content h1 {
-    font-family: 'Merriweather', serif;
-    font-size: 3.2em; /* Larger H1 */
-    color: var(--accent-blue); /* Blue for main heading */
-    margin-bottom: 0.15em;
-    font-weight: 800; /* Bolder H1 */
-    letter-spacing: -0.5px; /* Tighter letter spacing for impact */
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
-
-.hero-icons {
     display: flex;
     justify-content: center;
-    gap: 1em;
-    font-size: 1.5em;
-    margin-top: 0.5em;
-    color: var(--accent-green); /* Now black */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 0.2rem;
+    font-family: "Merriweather", serif;
+    font-size: clamp(2rem, 6vw, 3.15rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--ink);
 }
 
-.hero-content h2 {
-    font-size: 1.6em; /* Larger H2 */
-    font-weight: 400;
-    color: var(--accent-yellow); /* Yellow for subheading */
-    margin-bottom: 1em;
-    letter-spacing: 0.5px;
+.hero-content > p {
+    margin: 0 auto 0.8rem;
+    max-width: 38rem;
+    font-size: 1.12rem;
 }
 
-.hero-content p {
-    color: var(--dark-text);
-    font-size: 1.25em; /* Larger paragraph text */
-    margin-bottom: 1.8em;
-    max-width: 750px; /* Constrain width for readability */
-    margin-left: auto;
-    margin-right: auto;
+.hero-content .hero-role {
+    margin: 0 0 0.7rem;
+    font-family: "Merriweather", serif;
+    font-size: 1.45rem;
+    color: var(--accent-pink-dark);
+}
+
+.hero-content .hero-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 0 1.2rem;
+    color: var(--primary-pink);
+    font-size: 1.35rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.btn-main,
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.85rem 1.4rem;
+    font-family: inherit;
+    font-size: 1.02rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .btn-main {
-    display: inline-block;
     background: var(--primary-pink);
-    color: var(--light-text);
-    border-radius: 32px;
-    padding: 0.85em 2.2em; /* More padding for a bolder button */
-    font-size: 1.1em; /* Larger font size */
-    font-weight: 700; /* Bolder text */
-    text-decoration: none;
-    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease; /* All transitions */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Subtle shadow */
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
+    color: var(--neutral-white);
 }
 
-.service-icons {
+.btn-main:hover {
+    background: var(--ink);
+    color: var(--neutral-white);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background: var(--whatsapp);
+    color: var(--neutral-white);
+}
+
+.btn-whatsapp:hover {
+    background: var(--whatsapp-dark);
+    color: var(--neutral-white);
+    transform: translateY(-2px);
+}
+
+/* --- Cards --- */
+.card-section {
+    max-width: 900px;
+    margin: 2.4rem auto;
+    background: var(--neutral-white);
+    border: 1px solid var(--neutral-grey);
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(34, 48, 78, 0.08);
+    padding: 2.4rem 2rem;
+}
+
+.card-section h2 {
+    margin: 0 0 0.85rem;
+    color: var(--primary-pink);
+    font-family: "Merriweather", serif;
+    font-size: clamp(1.45rem, 3vw, 1.85rem);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.card-section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 0.55rem auto 0;
+    border-radius: 2px;
+    background: var(--ink);
+}
+
+.section-intro {
+    max-width: 40rem;
+    margin: 0 auto 1.2rem;
+    text-align: center;
+}
+
+.card-section > p {
+    margin-top: 0;
+}
+
+.card-section > p + p {
+    margin-top: 0.9rem;
+}
+
+/* --- About --- */
+.qual-line {
+    margin: 1.3rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--neutral-grey);
+}
+
+.qual-line .placeholder-tag {
+    margin: 0 0.45rem;
+    vertical-align: middle;
+}
+
+/* --- Placeholders Mieke still needs to replace --- */
+.placeholder-tag {
+    display: inline-block;
+    margin-bottom: 0.35rem;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    background: var(--accent-pink-dark);
+    color: var(--neutral-white);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.fill-in,
+.fill-in-inline {
+    border: 2px dashed var(--accent-pink-dark);
+    background: var(--accent-pink-light);
+    color: var(--accent-pink-dark);
+    border-radius: 14px;
+}
+
+.fill-in {
+    margin: 0.9rem 0;
+    padding: 1rem 1.1rem;
+    text-align: center;
+}
+
+.fill-in p,
+.fill-in cite {
+    margin: 0.2rem 0 0;
+    color: var(--accent-pink-dark);
+    font-style: normal;
+    font-weight: 800;
+}
+
+.fill-in-inline {
+    display: inline-block;
+    margin-top: 0.35rem;
+    padding: 0.15rem 0.5rem;
+    font-weight: 800;
+}
+
+.photo-placeholder {
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    font-size: 1.15rem;
+}
+
+.photo-placeholder .fa-camera {
+    font-size: 2rem;
+}
+
+/* --- Services --- */
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 1.2rem;
+}
+
+.service {
+    margin: 0;
+    padding: 1.4rem 1.15rem;
+    background: var(--neutral-white);
+    border: 1px solid var(--neutral-grey);
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.service h3 {
+    margin: 0 0 0.45rem;
+    color: var(--ink);
+    font-family: "Merriweather", serif;
+    font-size: 1.18rem;
+    line-height: 1.35;
+    text-wrap: balance;
+}
+
+.service p {
+    margin: 0;
+    font-size: 0.98rem;
+}
+
+.service i,
+.price-item i,
+.contact-details i {
+    color: var(--primary-pink);
+}
+
+/* --- When and where --- */
+.place-line {
     display: flex;
     justify-content: center;
-    gap: 0.5em;
-    font-size: 1.2em;
-    margin-top: 0.3em;
-    color: var(--accent-purple); /* Purple for icons */
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0 0 0.4rem;
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-align: center;
 }
+
+/* --- Prices --- */
+.price-item {
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 1.5rem 1.3rem 1.2rem;
+    border: 1px solid var(--neutral-grey);
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.price-item h3 {
+    margin: 0 0 0.3rem;
+    font-family: "Merriweather", serif;
+    font-size: 1.35rem;
+}
+
+.price-amount {
+    margin: 0 0 0.8rem;
+}
+
+.price-rand {
+    font-family: "Merriweather", serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent-pink-dark);
+    line-height: 1;
+}
+
+.price-item ul {
+    margin: 0 0 0.9rem;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.price-item li {
+    display: flex;
+    gap: 0.55rem;
+    align-items: flex-start;
+    margin: 0.45rem 0;
+}
+
+.price-note {
+    margin: 0;
+    color: var(--accent-pink-dark);
+    font-weight: 700;
+    text-wrap: balance;
+}
+
+/* --- Reviews --- */
+.review-list {
+    display: grid;
+    gap: 0.9rem;
+}
+
+/* --- Contact --- */
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.6rem;
+    align-items: start;
+}
+
+.btn-whatsapp-large {
+    width: 100%;
+    padding: 1rem 1.1rem;
+    font-size: 1.12rem;
+}
+
+.contact-details {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+.contact-details li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin: 0.85rem 0;
+}
+
+.contact-details a {
+    color: var(--ink);
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.contact-details a:hover {
+    color: var(--primary-pink);
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-pink-dark);
+}
+
+.contact-form h3 {
+    margin: 0 0 0.4rem;
+    font-family: "Merriweather", serif;
+    font-size: 1.25rem;
+    text-align: left;
+}
+
+.form-note {
+    margin: 0 0 0.9rem;
+    font-size: 0.95rem;
+}
+
+.form-group {
+    margin-bottom: 0.8rem;
+}
+
 .form-group label {
     display: block;
-    margin-bottom: 0.4em;
-    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-weight: 700;
 }
+
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.7em;
+    padding: 0.7rem 0.75rem;
     border: 1px solid var(--neutral-grey);
-    border-radius: 8px;
-    font-size: 1em;
-    font-family: 'Open Sans', Arial, sans-serif;
-    margin-bottom: 0.2em;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 16px;
+    color: var(--ink);
+    background: var(--neutral-white);
 }
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 8rem;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-pink);
-    box-shadow: 0 0 0 2px rgba(231,84,128,0.15);
-}
-.footer-social a {
-    color: var(--light-text);
-    font-size: 1.5em;
-    transition: color 0.2s;
-}
-.footer-social a:hover {
-    color: var(--accent-green); /* Now black */
-}
-.back-to-top:hover {
-    background: var(--primary-pink);
+    box-shadow: 0 0 0 3px rgba(255, 79, 154, 0.2);
 }
 
-.btn-main:hover {
-    background: var(--accent-green); /* Now black */
-    color: var(--light-text); /* Keep text white on hover */
-    transform: translateY(-3px); /* More pronounced lift */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25); /* Larger shadow on hover */
-}
-
-
-/* --- General Section Styling --- */
-.about-formal, .services-formal, .testimonials-formal, .contact-formal {
-    max-width: 900px; /* Slightly wider sections */
-    margin: 4em auto 3em auto; /* More vertical margin between sections */
-    background: var(--neutral-white);
-    box-shadow: 0 8px 25px 0 rgba(34,48,78,0.08); /* More prominent shadow */
-    padding: 3em; /* More padding within sections */
-    border-radius: 24px; /* More rounded corners */
-    border: 1px solid var(--neutral-grey);
-    position: relative; /* For potential future absolute positioning of elements */
-}
-/* Removed stray closing brace that caused a syntax error */
-/* Location Section */
-.location-formal {
-    max-width: 900px;
-    margin: 4em auto 3em auto;
-    background: var(--neutral-white);
-    box-shadow: 0 8px 25px 0 rgba(34,48,78,0.08);
-    padding: 3em;
-    border-radius: 24px;
-    border: 1px solid var(--neutral-grey);
-    position: relative;
-    text-align: center;
-}
-.location-formal h3 {
-    color: var(--primary-pink);
-    margin-bottom: 0.6em;
-    font-size: 1.8em;
-    font-family: 'Merriweather', serif;
+.form-status {
+    min-height: 1.4em;
+    margin: 0.8rem 0 0;
     font-weight: 700;
-    text-align: center;
-    position: relative;
-    padding-bottom: 0.3em;
-}
-.location-formal h3::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent-green); /* Now black */
-    margin: 10px auto 0 auto;
-    border-radius: 2px;
-}
-.location-details p {
-    font-size: 1.18em;
-    color: var(--dark-text);
-    font-weight: 500;
-    margin-top: 1.2em;
-}
-.location-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-/* End Location Section */
-/* Section Title Styling */
-.about-formal h3, .services-formal h3, .testimonials-formal h3, .contact-formal h3 {
-    color: var(--primary-pink);
-    margin-bottom: 0.6em; /* More space below headings */
-    font-size: 1.8em; /* Larger section headings */
-    font-family: 'Merriweather', serif;
-    font-weight: 700;
-    text-align: center; /* Center align all section headings */
-    position: relative;
-    padding-bottom: 0.3em; /* Space for an underline effect */
-}
-.about-formal h3::after, .services-formal h3::after, .testimonials-formal h3::after, .contact-formal h3::after {
-    content: '';
-    display: block;
-    width: 60px; /* Short underline */
-    height: 3px;
-    background: var(--accent-green); /* Black underline */
-    margin: 10px auto 0 auto; /* Center the underline */
-    border-radius: 2px;
-}
-
-
-/* --- Services Section --- */
-.service-list {
-    display: grid; /* Using CSS Grid for better control */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-    gap: 2.5em; /* Increased gap */
-    justify-content: center;
-    padding-top: 1em; /* Space from heading */
-}
-
-.service {
-    background: var(--neutral-white);
-    padding: 2.5em; /* More padding inside service cards */
-    border-radius: 16px; /* Rounded corners */
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Clearer shadow for cards */
-    text-align: center; /* Center content in service cards */
-    transition: transform 0.25s ease, box-shadow 0.25s ease; /* Smooth transitions */
-    border: 1px solid var(--neutral-grey);
-}
-.service:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* More pronounced shadow on hover */
-}
-
-.service h4 {
-    color: var(--accent-green); /* Now black */
-    font-size: 1.4em; /* Larger service titles */
-    font-family: 'Merriweather', serif;
-    margin-bottom: 0.6em;
-}
-.service p {
-    font-size: 1.05em; /* Slightly larger paragraph in services */
-    color: var(--dark-text);
-}
-
-
-/* --- Testimonials Section --- */
-.testimonials-formal blockquote {
-    border-left: 5px solid var(--accent-green); /* Thicker black border */
-    margin: 2.5em auto 1.5em auto; /* More spacing */
-    padding: 1.5em 1.5em 1.5em 1.8em; /* More padding */
-    font-style: italic;
-    color: var(--dark-text);
-    background: #fcfcfc;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Shadow for quotes */
-    max-width: 700px; /* Constrain quote width */
-}
-
-.testimonials-formal blockquote span {
-    display: block;
-    font-size: 1em;
-    color: var(--primary-pink);
-    font-style: normal;
-    font-weight: 600; /* Bolder attribution */
-    margin-top: 0.5em;
-    text-align: right; /* Align attribution to the right */
-}
-
-/* --- Contact Section --- */
-.contact-formal .btn-secondary {
-    display: inline-block;
-    background: var(--accent-green); /* Secondary button background black */
-    color: var(--light-text);
-    border-radius: 28px; /* More rounded */
-    padding: 0.8em 2em; /* More padding */
-    font-size: 1.05em;
-    text-decoration: none;
-    margin-top: 1.5em;
-    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Subtle shadow */
-}
-
-.contact-formal .btn-secondary:hover {
-    background: var(--primary-pink); /* Hover to pink */
-    color: var(--light-text);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
 /* --- Footer --- */
 footer {
+    margin-top: 2.5rem;
+    padding: 1.8rem 1rem 1.6rem;
     background: var(--primary-pink);
-    color: var(--light-text);
+    color: var(--neutral-white);
     text-align: center;
-    padding: 2em 0; /* More padding for footer */
-    font-size: 0.95em;
-    margin-top: 4em; /* More space before footer */
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.05); /* Subtle shadow for footer */
 }
 
-/* --- Responsive Adjustments (Enhanced) --- */
-@media (max-width: 900px) {
-    .about-formal, .services-formal, .testimonials-formal, .contact-formal {
-        max-width: 95%; /* Use more width on smaller screens */
-        margin: 3em auto 2em auto;
-        padding: 2em;
+footer a {
+    color: var(--neutral-white);
+    font-weight: 800;
+}
+
+.call-to-action-bar {
+    margin: 0 0 0.8rem;
+    font-size: 1.12rem;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    background: var(--ink);
+}
+
+footer p {
+    margin: 0.35rem 0 0;
+}
+
+.back-to-top,
+.wa-float {
+    position: fixed;
+    z-index: 180;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+.back-to-top {
+    right: calc(1rem + env(safe-area-inset-right));
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    width: 2.8rem;
+    height: 2.8rem;
+    background: var(--primary-pink);
+    color: var(--neutral-white);
+}
+
+.back-to-top:hover {
+    background: var(--ink);
+    color: var(--neutral-white);
+}
+
+.wa-float {
+    display: none;
+}
+
+html.lang-pending body {
+    visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .btn-main,
+    .btn-whatsapp,
+    nav ul a {
+        transition: none;
+    }
+}
+
+@media (max-width: 1040px) {
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .nav-logo {
+        margin-right: auto;
+    }
+
+    nav ul {
+        display: none;
+        order: 5;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        margin: 0.35rem 0 0;
+    }
+
+    body.nav-open nav ul {
+        display: flex;
+    }
+
+    nav ul a {
+        justify-content: flex-start;
+        white-space: normal;
     }
 }
 
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        padding: 1em;
-    }
-    .nav-logo {
-        margin-bottom: 0.8em;
-    }
-    nav ul {
-        flex-wrap: wrap; /* Allow nav items to wrap */
-        justify-content: center;
-        gap: 0.8em 1.2em; /* Row and column gap */
-    }
-    nav ul li {
-        margin: 0; /* Reset individual margin */
+    .card-section {
+        margin: 1rem 0.75rem;
+        padding: 1.35rem 1rem;
+        border-radius: 18px;
     }
 
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-    .hero-content h2 {
-        font-size: 1.3em;
-    }
-    .hero-content p {
-        font-size: 1.1em;
+    .contact-layout {
+        grid-template-columns: 1fr;
     }
 
-    .about-formal h3, .services-formal h3, .testimonials-formal h3, .contact-formal h3 {
-        font-size: 1.6em;
-    }
-    .about-formal h3::after, .services-formal h3::after, .testimonials-formal h3::after, .contact-formal h3::after {
-        width: 40px; /* Smaller underline for mobile */
-    }
-
-    .service-list {
-        grid-template-columns: 1fr; /* Stack services on mobile */
-    }
-
-    .service {
-        width: 90%; /* Wider cards on mobile */
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 1em;
-    }
     .hero-formal {
-        padding: 3em 0.5em 2.5em 0.5em;
+        min-height: 0;
+        padding: 1.4rem 0.75rem 1.6rem;
     }
-    .hero-content h1 {
-        font-size: 2em;
+
+    .hero-content {
+        padding: 1.4rem 1rem 1.25rem;
     }
-    .hero-content h2 {
-        font-size: 1.1em;
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
     }
-    .btn-main {
-        padding: 0.7em 1.8em;
-        font-size: 1em;
+
+    .hero-actions .btn-main,
+    .hero-actions .btn-whatsapp,
+    .contact-form .btn-main {
+        width: 100%;
     }
-    .about-formal, .services-formal, .testimonials-formal, .contact-formal {
-        padding: 1.5em;
-        margin: 2em auto 1.5em auto;
+
+}
+
+@media (max-width: 900px) {
+    .back-to-top {
+        display: none;
     }
-    .service {
-        padding: 2em;
+
+    .wa-float {
+        display: flex;
+        right: calc(1rem + env(safe-area-inset-right));
+        bottom: calc(1rem + env(safe-area-inset-bottom));
+        width: 3.7rem;
+        height: 3.7rem;
+        background: var(--whatsapp-bright);
+        color: #fff;
+        font-size: 2rem;
     }
-    .testimonials-formal blockquote {
-        padding: 1.2em;
+
+    footer {
+        padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
     }
 }
-/* End of file */
+
+@media (max-width: 380px) {
+    .nav-logo {
+        font-size: 1.12rem;
+    }
+
+    .hero-content .hero-role {
+        font-size: 1.2rem;
+    }
+}
