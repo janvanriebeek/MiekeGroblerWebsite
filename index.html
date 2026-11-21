@@ -1,197 +1,536 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mieke Grobler | Private Tutor</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Merriweather:wght@700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <!-- Smooth scroll behavior -->
-    <style>html { scroll-behavior: smooth; }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="meta.title">Extra Classes Mossel Bay | Mieke Grobler – Private Tutor</title>
+    <meta name="description" data-i18n-content="meta.description" content="Private extra classes in Mossel Bay with Mieke Grobler. Maths, English, Afrikaans and exam support for Grade 1 to Grade 12. R120 per hour.">
+    <meta name="author" content="Mieke Grobler">
+    <meta name="theme-color" content="#ff4f9a">
+    <meta name="geo.region" content="ZA-WC">
+    <meta name="geo.placename" content="Mossel Bay">
+    <meta property="og:title" data-i18n-content="meta.title" content="Extra Classes Mossel Bay | Mieke Grobler – Private Tutor">
+    <meta property="og:description" data-i18n-content="meta.description" content="Private extra classes in Mossel Bay with Mieke Grobler. Maths, English, Afrikaans and exam support for Grade 1 to Grade 12. R120 per hour.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:locale:alternate" content="af_ZA">
+    <!-- Relative image path: still works if a custom domain is added later. -->
+    <meta property="og:image" content="heap-nice-stationery_23-2147864663.avif">
+    <meta property="og:image:alt" data-i18n-content="meta.imageAlt" content="Pink background with scissors, pens, pencils and other colourful stationery">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" data-i18n-content="meta.title" content="Extra Classes Mossel Bay | Mieke Grobler – Private Tutor">
+    <meta name="twitter:description" data-i18n-content="meta.description" content="Private extra classes in Mossel Bay with Mieke Grobler. Maths, English, Afrikaans and exam support for Grade 1 to Grade 12. R120 per hour.">
+    <meta name="twitter:image" content="heap-nice-stationery_23-2147864663.avif">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&amp;family=Merriweather:wght@700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+    try {
+        if (localStorage.getItem("mieke-lang") === "af") {
+            document.documentElement.classList.add("lang-pending");
+        }
+    } catch (e) {}
+    </script>
+    <style>html.lang-pending body { visibility: hidden; }</style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mieke Grobler",
+        "jobTitle": "Private Tutor",
+        "email": "mailto:miekegrobler03@gmail.com",
+        "telephone": "+27649006282",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mossel Bay",
+            "addressRegion": "Western Cape",
+            "addressCountry": "ZA"
+        },
+        "knowsLanguage": ["en", "af"],
+        "makesOffer": {
+            "@type": "Offer",
+            "price": "120",
+            "priceCurrency": "ZAR",
+            "unitText": "HOUR"
+        }
+    }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#home" data-i18n="skip">Skip to content</a>
 
-    <!-- Navigation -->
     <header class="sticky-header">
         <nav>
-            <span class="nav-logo"></i> Mieke Grobler</span>
-            <ul>
-                <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
-                <li><a href="#extra-classes"><i class="fa-solid fa-chalkboard-teacher"></i> Extra Classes</a></li>
-                <li><a href="#prices"><i class="fa-solid fa-money-bill-wave"></i> Prices</a></li>
-                <li><a href="#location"><i class="fa-solid fa-location-dot"></i> Location</a></li>
-                <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            <a class="nav-logo" href="#home">Mieke Grobler</a>
+            <div class="lang-toggle" role="group" data-i18n-aria="aria.lang" aria-label="Language">
+                <button type="button" data-lang="en" class="is-active" aria-pressed="true" aria-label="English">EN</button>
+                <button type="button" data-lang="af" aria-pressed="false" aria-label="Afrikaans">AF</button>
+            </div>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                <span data-i18n="nav.menu">Menu</span>
+            </button>
+            <ul id="nav-menu">
+                <li><a href="#home"><i class="fa-solid fa-house" aria-hidden="true"></i> <span data-i18n="nav.home">Home</span></a></li>
+                <li><a href="#about"><i class="fa-solid fa-user" aria-hidden="true"></i> <span data-i18n="nav.about">About</span></a></li>
+                <li><a href="#extra-classes"><i class="fa-solid fa-chalkboard-teacher" aria-hidden="true"></i> <span data-i18n="nav.classes">Extra Classes</span></a></li>
+                <li><a href="#when-where"><i class="fa-solid fa-clock" aria-hidden="true"></i> <span data-i18n="nav.when">When &amp; where</span></a></li>
+                <li><a href="#prices"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span data-i18n="nav.prices">Prices</span></a></li>
+                <li><a href="#reviews"><i class="fa-solid fa-comment" aria-hidden="true"></i> <span data-i18n="nav.reviews">Reviews</span></a></li>
+                <li><a href="#contact"><i class="fa-solid fa-envelope" aria-hidden="true"></i> <span data-i18n="nav.contact">Contact</span></a></li>
             </ul>
         </nav>
     </header>
-    <!-- Top Image Removed. Background is now set in CSS for hero section. -->
 
-    <!-- Hero / Intro Section -->
     <section id="home" class="hero-formal">
+        <img class="hero-bg" src="heap-nice-stationery_23-2147864663.avif" width="626" height="417" alt="Pink background with scissors, pens, pencils and other colourful stationery" data-i18n-alt="meta.imageAlt">
         <div class="hero-content">
-            <h1><i class="fa-solid fa-graduation-cap"></i> Mieke Grobler</h1>
-            <h2>Private Tutor</h2>
-            <p>Guiding students toward academic excellence and confident learning.<br>
-            <span class="hero-icons">
+            <h1><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Mieke Grobler</h1>
+            <p class="hero-role" data-i18n="hero.role">Private Tutor</p>
+            <p data-i18n="hero.tagline">Guiding students toward academic excellence and confident learning.</p>
+            <p class="hero-icons" aria-hidden="true">
                 <i class="fa-solid fa-chalkboard"></i>
                 <i class="fa-solid fa-book-open"></i>
                 <i class="fa-solid fa-user-graduate"></i>
-            </span>
             </p>
-            <a href="#contact" class="btn-main"><i class="fa-solid fa-calendar-check"></i> Schedule a Session</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-formal">
-        <h3>About Me</h3>
-        <p>
-            Hi, I'm Mieke Grobler, a passionate and dedicated teacher offering extra classes to learners from Grade 1 to Grade 12. My goal is to support each student’s unique learning journey by building strong foundations, improving confidence, and encouraging a love for learning.<br><br>
-            I have extensive experience working with learners who have <strong>ADHD</strong>, <strong>dyslexia</strong>, and <strong>autism</strong>. I understand the importance of creating a calm, supportive, and flexible learning environment. I use individualized strategies—like multi-sensory tools, step-by-step guidance, and routine structure—to help every child succeed at their own pace.<br><br>
-            Whether your child needs support catching up, exam preparation, or ongoing enrichment, I’m here to help them reach their full potential.
-        </p>
-    </section>
-
-    <!-- Classes / Services Section -->
-    <section id="extra-classes" class="services-formal">
-        <h3>Extra Classes Offered</h3>
-        <div class="service-list">
-            <div class="service">
-                <h4><i class="fa-solid fa-pencil"></i> Fine Motor Skill Development (Grades 1–3)</h4>
-                <p>These sessions focus on building the small muscle movements needed for writing, cutting, drawing, and everyday classroom tasks. Activities are fun, hands-on, and designed to improve hand-eye coordination, pencil grip, and overall control—key skills for confident early learning.</p>
-            </div>
-            <div class="service">
-                <h4><i class="fa-solid fa-square-root-variable"></i> Mathematics (Grades 4–6)</h4>
-                <p>I offer guided support to help learners understand core math concepts like multiplication, division, fractions, problem-solving, and word sums. Lessons are broken down step by step to make math less overwhelming and more enjoyable, with lots of practice and real-world examples.</p>
-            </div>
-            <div class="service">
-                <h4><i class="fa-solid fa-chart-line"></i> Mathematical Literacy (Grades 10–12)</h4>
-                <p>These lessons help students understand how math applies to everyday life—budgets, interest rates, measurements, and more. I focus on practical problem-solving, clear explanations, and exam preparation to help learners succeed with confidence in this important subject.</p>
-            </div>
-            <div class="service">
-                <h4><i class="fa-solid fa-language"></i> Afrikaans and English Language Development (All Grades)</h4>
-                <p>Whether your child needs help with reading, writing, grammar, spelling, or comprehension, I provide tailored support in both English and Afrikaans. Lessons are interactive, creative, and adapted to each learner’s level, helping them grow their vocabulary, improve sentence construction, and become confident communicators.</p>
-            </div>
-            <div class="service">
-                <h4><i class="fa-solid fa-clipboard-check"></i> Exam Preparation and Study Support (All Grades)</h4>
-                <p>I help learners prepare for tests and exams by reviewing key content, building study methods, and working through past papers. We focus on time management, reading questions carefully, and learning how to answer effectively under pressure.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-main"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> <span data-i18n="hero.schedule">Schedule a Session</span></a>
+                <a class="btn-whatsapp" data-wa href="https://wa.me/27649006282?text=Hi%20Mieke%2C%20I%20would%20like%20to%20find%20out%20about%20extra%20classes%20please." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> <span data-i18n="hero.whatsapp">WhatsApp Mieke</span></a>
             </div>
         </div>
     </section>
 
-    <!-- Location Section -->
-    <section id="location" class="location-formal section-animate">
-        <div class="location-content">
-            <h3><i class="fa-solid fa-location-dot"></i> Location</h3>
-            <div class="location-details">
-                <p><i class="fa-solid fa-map-marker-alt" style="color:var(--accent-green);margin-right:0.5em;"></i> <span style="font-weight:700;color:var(--primary-pink);">Mossel Bay Area</span></p>
-                <p style="color:var(--dark-text);font-size:1.08em;margin-top:0.5em;">Conveniently located for in-person lessons.<br>Contact me for directions.</p>
+    <main>
+        <section id="about" class="card-section">
+            <h2 data-i18n="about.heading">About Me</h2>
+            <p data-i18n="about.p1">Hi, I'm Mieke Grobler, a passionate and dedicated teacher offering extra classes to learners from Grade 1 to Grade 12. My goal is to support each student's unique learning journey by building strong foundations, improving confidence, and encouraging a love for learning.</p>
+            <p data-i18n="about.p2">I have extensive experience working with learners who have ADHD, dyslexia, and autism. I understand the importance of creating a calm, supportive, and flexible learning environment. I use individualised strategies — like multi-sensory tools, step-by-step guidance, and routine structure — to help every child succeed at their own pace.</p>
+            <p data-i18n="about.p3">Whether your child needs support catching up, exam preparation, or ongoing enrichment, I'm here to help them reach their full potential.</p>
+            <p class="qual-line">
+                <strong data-i18n="about.qualLabel">Qualifications and experience:</strong>
+                <!-- PLACEHOLDER: Replace "[Qualifications and experience here]" with Mieke's real qualifications and experience. Also update about.qual in the Afrikaans strings at the bottom of this file. -->
+                <span class="placeholder-tag" data-i18n="placeholder.tag">To fill in</span>
+                <span class="fill-in-inline" data-i18n="about.qual">[Qualifications and experience here]</span>
+            </p>
+        </section>
+
+        <section id="photo" class="card-section">
+            <h2 data-i18n="photo.heading">A photo of Mieke</h2>
+            <!-- PLACEHOLDER: Replace this box with a photo of Mieke.
+                 Keep a relative path so a custom domain still works. Example:
+                 <img src="mieke.jpg" alt="Mieke Grobler, private tutor in Mossel Bay">
+                 Also update photo.placeholder in the Afrikaans strings if you remove this text. -->
+            <div class="photo-placeholder fill-in">
+                <i class="fa-solid fa-camera" aria-hidden="true"></i>
+                <span class="placeholder-tag" data-i18n="placeholder.tag">To fill in</span>
+                <p data-i18n="photo.placeholder">[Photo of Mieke here]</p>
             </div>
-        </div>
-    </section>
-    <!-- Testimonials Section -->
-    <section id="prices" class="prices-formal">
-        <h3>Class Pricing</h3>
-        <div class="price-list" style="justify-content:center;">
-            <div class="price-item" style="max-width:400px;margin:auto;">
-                <h4 style="font-size:1.6em;color:var(--primary-pink);margin-bottom:0.5em;"><i class="fa-solid fa-money-bill-wave"></i> All Classes</h4>
-                <p style="font-size:1.3em;color:var(--accent-green);font-weight:700;margin-bottom:0.7em;">R120 <span style="font-size:0.9em;color:var(--dark-text);font-weight:400;">per hour</span></p>
-                <ul style="list-style:none;padding:0;margin:0 0 1em 0;font-size:1.08em;color:var(--dark-text);">
-                    <li><i class="fa-solid fa-pencil"></i> Fine Motor Skill Development (Grades 1–3)</li>
-                    <li><i class="fa-solid fa-square-root-variable"></i> Mathematics (Grades 4–6)</li>
-                    <li><i class="fa-solid fa-chart-line"></i> Mathematical Literacy (Grades 10–12)</li>
-                    <li><i class="fa-solid fa-language"></i> Afrikaans & English Language Development (All Grades)</li>
-                    <li><i class="fa-solid fa-clipboard-check"></i> Exam Preparation & Study Support (All Grades)</li>
+        </section>
+
+        <section id="extra-classes" class="card-section">
+            <h2 data-i18n="service.heading">Extra Classes Offered</h2>
+            <div class="service-list">
+                <article class="service">
+                    <h3><i class="fa-solid fa-pencil" aria-hidden="true"></i> <span data-i18n="service.motor.title">Fine Motor Skill Development (Grades 1‑3)</span></h3>
+                    <p data-i18n="service.motor.body">These sessions focus on building the small muscle movements needed for writing, cutting, drawing, and everyday classroom tasks. Activities are fun, hands-on, and designed to improve hand-eye coordination, pencil grip, and overall control — key skills for confident early learning.</p>
+                </article>
+                <article class="service">
+                    <h3><i class="fa-solid fa-square-root-variable" aria-hidden="true"></i> <span data-i18n="service.maths.title">Mathematics (Grades 4‑6)</span></h3>
+                    <p data-i18n="service.maths.body">I offer guided support to help learners understand core maths concepts like multiplication, division, fractions, problem-solving, and word sums. Lessons are broken down step by step to make maths less overwhelming and more enjoyable, with lots of practice and real-world examples.</p>
+                </article>
+                <article class="service">
+                    <h3><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span data-i18n="service.lit.title">Mathematical Literacy (Grades 10‑12)</span></h3>
+                    <p data-i18n="service.lit.body">These lessons help students understand how maths applies to everyday life — budgets, interest rates, measurements, and more. I focus on practical problem-solving, clear explanations, and exam preparation to help learners succeed with confidence in this important subject.</p>
+                </article>
+                <article class="service">
+                    <h3><i class="fa-solid fa-language" aria-hidden="true"></i> <span data-i18n="service.lang.title">Afrikaans and English Language Development (All Grades)</span></h3>
+                    <p data-i18n="service.lang.body">Whether your child needs help with reading, writing, grammar, spelling, or comprehension, I provide tailored support in both English and Afrikaans. Lessons are interactive, creative, and adapted to each learner's level, helping them grow their vocabulary, improve sentence construction, and become confident communicators.</p>
+                </article>
+                <article class="service">
+                    <h3><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i> <span data-i18n="service.exam.title">Exam Preparation and Study Support (All Grades)</span></h3>
+                    <p data-i18n="service.exam.body">I help learners prepare for tests and exams by reviewing key content, building study skills, and working through past papers. We focus on time management, reading questions carefully, and learning how to answer effectively under pressure.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="when-where" class="card-section">
+            <h2 data-i18n="when.heading">When and where</h2>
+            <p class="place-line"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span data-i18n="contact.location">Mossel Bay, Western Cape</span></p>
+            <p class="section-intro" data-i18n="when.intro">Days, times, and whether lessons are in person or online will be added here.</p>
+            <!-- PLACEHOLDER: Replace "[Days and hours here]" with Mieke's real days and times. Also update when.hours in the Afrikaans strings. -->
+            <div class="fill-in">
+                <span class="placeholder-tag" data-i18n="placeholder.tag">To fill in</span>
+                <p data-i18n="when.hours">[Days and hours here]</p>
+            </div>
+            <!-- PLACEHOLDER: Replace "[In-person or online here]" with whether lessons are in person, online, or both, and where in Mossel Bay she teaches. Also update when.mode in the Afrikaans strings. -->
+            <div class="fill-in">
+                <span class="placeholder-tag" data-i18n="placeholder.tag">To fill in</span>
+                <p data-i18n="when.mode">[In-person or online here]</p>
+            </div>
+        </section>
+
+        <section id="prices" class="card-section">
+            <h2 data-i18n="price.heading">Class Pricing</h2>
+            <div class="price-item">
+                <h3><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> <span data-i18n="price.all">All Classes</span></h3>
+                <p class="price-amount"><span class="price-rand">R120</span> <span data-i18n="price.per">per hour</span></p>
+                <ul>
+                    <li><i class="fa-solid fa-pencil" aria-hidden="true"></i> <span data-i18n="service.motor.title">Fine Motor Skill Development (Grades 1‑3)</span></li>
+                    <li><i class="fa-solid fa-square-root-variable" aria-hidden="true"></i> <span data-i18n="service.maths.title">Mathematics (Grades 4‑6)</span></li>
+                    <li><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span data-i18n="service.lit.title">Mathematical Literacy (Grades 10‑12)</span></li>
+                    <li><i class="fa-solid fa-language" aria-hidden="true"></i> <span data-i18n="service.lang.title">Afrikaans and English Language Development (All Grades)</span></li>
+                    <li><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i> <span data-i18n="service.exam.title">Exam Preparation and Study Support (All Grades)</span></li>
                 </ul>
-                <p style="color:var(--primary-pink);font-size:1.05em;margin-top:0.5em;"><i class="fa-solid fa-info-circle"></i> One simple rate for every class. No hidden fees.</p>
+                <p class="price-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span data-i18n="price.note">One simple rate for every class. No hidden fees.</span></p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-formal">
-        <h3>Contact</h3>
-        <p><i class="fa-solid fa-comments"></i> Ready to discuss your learning goals or need extra help? Reach out below:</p>
-        <form class="contact-form" action="https://formspree.io/f/xblynzdd" method="POST">
-            <div class="form-group">
-                <label for="name"><i class="fa-solid fa-user"></i> Name:</label>
-                <input type="text" id="name" name="name" required>
+        <section id="reviews" class="card-section">
+            <h2 data-i18n="review.heading">What parents say</h2>
+            <p class="section-intro" data-i18n="review.intro">Real comments from parents will go here. The notes below are not reviews yet.</p>
+            <!-- PLACEHOLDER: Replace each "[Parent review here]" and "[Parent name here]" with a real parent comment.
+                 Do not publish invented reviews. Copy a blockquote to add another one.
+                 Also update review.text and review.name in the Afrikaans strings. -->
+            <div class="review-list">
+                <blockquote class="fill-in">
+                    <span class="placeholder-tag" data-i18n="placeholder.tag">To fill in</span>
+                    <p data-i18n="review.text">[Parent review here]</p>
+                    <cite data-i18n="review.name">[Parent name here]</cite>
+                </blockquote>
+                <blockquote class="fill-in">
+                    <span class="placeholder-tag" data-i18n="placeholder.tag">To fill in</span>
+                    <p data-i18n="review.text">[Parent review here]</p>
+                    <cite data-i18n="review.name">[Parent name here]</cite>
+                </blockquote>
+                <blockquote class="fill-in">
+                    <span class="placeholder-tag" data-i18n="placeholder.tag">To fill in</span>
+                    <p data-i18n="review.text">[Parent review here]</p>
+                    <cite data-i18n="review.name">[Parent name here]</cite>
+                </blockquote>
             </div>
-            <div class="form-group">
-                <label for="email"><i class="fa-solid fa-phone"></i> Phone:</label>
-                <input type="email" id="email" name="email" required>
+        </section>
+
+        <section id="contact" class="card-section">
+            <h2 data-i18n="contact.heading">Contact</h2>
+            <p class="section-intro" data-i18n="contact.intro">Ready to talk about extra classes, or does your child need some help? Get in touch below.</p>
+            <div class="contact-layout">
+                <div>
+                    <a class="btn-whatsapp btn-whatsapp-large" data-wa href="https://wa.me/27649006282?text=Hi%20Mieke%2C%20I%20would%20like%20to%20find%20out%20about%20extra%20classes%20please." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> <span data-i18n="hero.whatsapp">WhatsApp Mieke</span></a>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <div>
+                                <span class="contact-label" data-i18n="contact.emailLabel">Email</span>
+                                <a href="mailto:miekegrobler03@gmail.com">miekegrobler03@gmail.com</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <div>
+                                <span class="contact-label" data-i18n="contact.phoneLabel">Phone</span>
+                                <a href="tel:+27649006282">+27 64 900 6282</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <div>
+                                <span class="contact-label" data-i18n="contact.locationLabel">Location</span>
+                                <span data-i18n="contact.location">Mossel Bay, Western Cape</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- No backend: Send opens the visitor's email app with this message addressed to Mieke. -->
+                <form class="contact-form" id="contact-form" action="mailto:miekegrobler03@gmail.com" method="post" enctype="text/plain">
+                    <h3 data-i18n="contact.formHeading">Send a message</h3>
+                    <p class="form-note" data-i18n="contact.formNote">This opens your email app with the message ready to send. You can also use WhatsApp, email, or the phone number above.</p>
+                    <div class="form-group">
+                        <label for="name" data-i18n="form.name">Name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required maxlength="100" placeholder="Your name" data-i18n-placeholder="form.namePh">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-i18n="form.phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required maxlength="30" placeholder="Your phone number" data-i18n-placeholder="form.phonePh">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="form.message">Message</label>
+                        <textarea id="message" name="message" rows="4" required maxlength="2000" placeholder="How can I help?" data-i18n-placeholder="form.messagePh"></textarea>
+                    </div>
+                    <button type="submit" class="btn-main"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> <span data-i18n="form.send">Send Message</span></button>
+                    <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="message"><i class="fa-solid fa-comment-dots"></i> Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn-main"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
-            <input type="hidden" name="_subject" value="New Contact Form Submission from Mieke Grobler Website">
-            <input type="hidden" name="_next" value="#contact">
-        </form>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <div class="call-to-action-bar">
-            Ready to improve your grades?
-            <a href="#contact" style="color:#fff;text-decoration:underline;font-weight:700;">Contact me today!</a>
-            <span style="margin-left:1em;"></span>
-            <a href="mailto:miekegrobler03@gmail.com" style="color:#fff;text-decoration:underline;font-weight:700;" title="Email Mieke">Email</a>
-            <span style="margin-left:0.7em;"></span>
-            <a href="https://wa.me/27649006282" target="_blank" style="color:#fff;text-decoration:underline;font-weight:700;" title="WhatsApp Mieke">WhatsApp</a>
-        </div>
+        <p class="call-to-action-bar">
+            <span data-i18n="footer.cta">Ready to improve your grades?</span>
+            <a href="#contact" data-i18n="footer.ctaLink">Contact me today!</a>
+        </p>
         <div class="footer-social">
-            <a href="https://wa.me/yourwhatsappphonenumber" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:your@email.com" title="Gmail" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            <a data-wa href="https://wa.me/27649006282?text=Hi%20Mieke%2C%20I%20would%20like%20to%20find%20out%20about%20extra%20classes%20please." target="_blank" rel="noopener noreferrer" data-i18n-aria="aria.whatsapp" aria-label="WhatsApp Mieke about extra classes"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+            <a href="mailto:miekegrobler03@gmail.com" data-i18n-aria="aria.email" aria-label="Email Mieke"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+            <a href="tel:+27649006282" data-i18n-aria="aria.phone" aria-label="Phone Mieke"><i class="fa-solid fa-phone" aria-hidden="true"></i></a>
         </div>
-        <p>&copy; 2025 Mieke Grobler. All rights reserved. <a href="#" style="color:#fff;text-decoration:underline;">Privacy Policy</a></p>
-        <a href="#home" class="back-to-top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
-    <script>
-    // Animate sections on scroll
-    function revealSections() {
-      document.querySelectorAll('.about-formal, .services-formal, .prices-formal, .contact-formal').forEach(function(section) {
-        var rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 60) {
-          section.classList.add('visible');
-        } else {
-          section.classList.remove('visible');
-        }
-      });
-    }
-    window.addEventListener('scroll', revealSections);
-    window.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.about-formal, .services-formal, .prices-formal, .contact-formal').forEach(function(section) {
-        section.classList.add('section-animate');
-      });
-      revealSections();
-    });
-    // Highlight active nav link
-    function highlightNav() {
-      var sections = ['home','about','extra-classes','prices','contact'];
-      var scrollPos = window.scrollY || window.pageYOffset;
-      var found = false;
-      sections.forEach(function(id, i) {
-        var sec = document.getElementById(id);
-        var nav = document.querySelector('a[href="#'+id+'"]');
-        if (sec && nav) {
-          var top = sec.offsetTop - 80;
-          var bottom = top + sec.offsetHeight;
-          if (scrollPos >= top && scrollPos < bottom && !found) {
-            nav.classList.add('active');
-            found = true;
-          } else {
-            nav.classList.remove('active');
-          }
-        }
-      });
-    }
-    window.addEventListener('scroll', highlightNav);
-    window.addEventListener('DOMContentLoaded', highlightNav);
-    </script>
+        <p>&copy; 2026 Mieke Grobler. <span data-i18n="footer.rights">All rights reserved.</span></p>
+        <p><a href="#home" data-i18n="aria.top">Back to top</a></p>
     </footer>
+
+    <a href="#home" class="back-to-top" data-i18n-aria="aria.top" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+    <a class="wa-float" data-wa href="https://wa.me/27649006282?text=Hi%20Mieke%2C%20I%20would%20like%20to%20find%20out%20about%20extra%20classes%20please." target="_blank" rel="noopener noreferrer" data-i18n-aria="aria.whatsapp" aria-label="WhatsApp Mieke about extra classes"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+
+    <script>
+    (function () {
+        // Afrikaans is everyday, not formal. Placeholder lines start with "[".
+        // When a placeholder in the HTML is replaced, update the matching key here too.
+        var AF = {
+            "meta.title": "Ekstra klasse Mosselbaai | Mieke Grobler – Privaat tutor",
+            "meta.description": "Ekstra klasse in Mosselbaai by Mieke Grobler. Wiskunde, Engels, Afrikaans en eksamenhulp vir graad 1 tot graad 12. R120 per uur.",
+            "meta.imageAlt": "Pienk agtergrond met ’n skêr, penne, potlode en ander kleurvolle skryfgoed.",
+            "skip": "Spring na inhoud",
+            "nav.menu": "Kieslys",
+            "nav.home": "Tuis",
+            "nav.about": "Oor my",
+            "nav.classes": "Ekstra klasse",
+            "nav.when": "Wanneer en waar",
+            "nav.prices": "Pryse",
+            "nav.reviews": "Ouers sê",
+            "nav.contact": "Kontak",
+            "hero.role": "Privaat tutor",
+            "hero.tagline": "Ek help leerders om beter te doen op skool, en om met selfvertroue te leer.",
+            "hero.schedule": "Maak ’n afspraak",
+            "hero.whatsapp": "WhatsApp Mieke",
+            "about.heading": "Oor my",
+            "about.p1": "Hi, ek is Mieke Grobler. Ek gee ekstra klasse vir leerders van graad 1 tot graad 12, en ek doen dit met my hele hart. Ek wil elke kind help om ’n sterk grondslag te bou, meer selfvertroue te kry, en lus te kry vir leer.",
+            "about.p2": "Ek het baie ervaring met leerders wat ADHD, disleksie en outisme het. Ek weet hoe belangrik ’n rustige, ondersteunende en buigsame leeromgewing is. Ek gebruik ’n manier wat by elke kind pas — soos praktiese hulpmiddels, stap-vir-stap hulp en ’n vaste roetine — sodat elke kind op hul eie pas kan regkom.",
+            "about.p3": "Of jou kind moet inhaal, vir eksamens voorberei, of net ’n bietjie ekstra wil doen — ek is hier om te help dat hulle hul beste kan gee.",
+            "about.qualLabel": "Kwalifikasies en ervaring:",
+            "about.qual": "[Kwalifikasies en ervaring hier]",
+            "photo.heading": "’n Foto van Mieke",
+            "photo.placeholder": "[Foto van Mieke hier]",
+            "service.heading": "Ekstra klasse",
+            "service.motor.title": "Fynmotoriese vaardighede (Graad 1‑3)",
+            "service.motor.body": "Hierdie klasse werk aan die klein spierbewegings wat kinders nodig het om te skryf, te knip, te teken en ander klaswerk te doen. Die aktiwiteite is lekker en prakties. Dit help met potloodgreep, beheer, en dat die hand en oog saamwerk — belangrike vaardighede vir selfvertroue in die vroeë skooljare.",
+            "service.maths.title": "Wiskunde (Graad 4‑6)",
+            "service.maths.body": "Ek help leerders om die belangrike wiskunde te verstaan, soos maal, deel, breuke, probleemoplossing en woordsomme. Ons doen dit stap vir stap, met baie oefening en voorbeelde uit die gewone lewe, sodat wiskunde minder oorweldigend en meer lekker is.",
+            "service.lit.title": "Wiskundige Geletterdheid (Graad 10‑12)",
+            "service.lit.body": "Hierdie lesse wys hoe wiskunde in die gewone lewe werk — begrotings, rente, mates en nog meer. Ek fokus op praktiese probleme, duidelike verduidelikings en eksamenvoorbereiding, sodat leerders die vak met selfvertroue kan doen.",
+            "service.lang.title": "Afrikaans en Engels (Alle grade)",
+            "service.lang.body": "As jou kind hulp nodig het met lees, skryf, grammatika, spelling of begrip, help ek in Engels en Afrikaans. Die lesse is prakties en pas by elke kind se vlak. So bou hulle hul woordeskat, skryf hulle beter sinne, en praat en skryf hulle met meer selfvertroue.",
+            "service.exam.title": "Eksamenvoorbereiding en studiehulp (Alle grade)",
+            "service.exam.body": "Ek help leerders voorberei vir toetse en eksamens. Ons hersien die belangrike werk, bou studievaardighede, en oefen ou vraestelle. Ons fokus op tydsbestuur, om vrae mooi te lees, en om onder druk goed te antwoord.",
+            "when.heading": "Wanneer en waar",
+            "when.intro": "Die dae, tye, en of die klasse in persoon of aanlyn is, moet nog hier ingevul word.",
+            "when.hours": "[Dae en tye hier]",
+            "when.mode": "[In persoon of aanlyn hier]",
+            "price.heading": "Klaspryse",
+            "price.all": "Alle klasse",
+            "price.per": "per uur",
+            "price.note": "Een eenvoudige prys vir elke klas. Geen versteekte kostes nie.",
+            "review.heading": "Wat ouers sê",
+            "review.intro": "Regte boodskappe van ouers kom nog hier. Die notas hier onder is nog nie resensies nie.",
+            "review.text": "[Ouer-resensie hier]",
+            "review.name": "[Ouer se naam hier]",
+            "contact.heading": "Kontak",
+            "contact.intro": "Wil jy gesels oor ekstra klasse, of het jou kind hulp nodig? Kontak my gerus.",
+            "contact.emailLabel": "E-pos",
+            "contact.phoneLabel": "Selfoon",
+            "contact.locationLabel": "Plek",
+            "contact.location": "Mosselbaai, Wes-Kaap",
+            "contact.formHeading": "Stuur ’n boodskap",
+            "contact.formNote": "Dit maak jou e-pos oop met die boodskap klaar ingevul. Jy kan ook WhatsApp, e-pos of die selfoon hierbo gebruik.",
+            "form.name": "Naam",
+            "form.phone": "Selfoon",
+            "form.message": "Boodskap",
+            "form.send": "Stuur boodskap",
+            "form.namePh": "Jou naam",
+            "form.phonePh": "Jou selfoonnommer",
+            "form.messagePh": "Hoe kan ek help?",
+            "placeholder.tag": "Vul nog in",
+            "footer.cta": "Wil jy jou punte verbeter?",
+            "footer.ctaLink": "Kontak my vandag!",
+            "footer.rights": "Alle regte voorbehou.",
+            "aria.lang": "Taal",
+            "aria.whatsapp": "WhatsApp Mieke oor ekstra klasse",
+            "aria.email": "E-pos vir Mieke",
+            "aria.phone": "Bel Mieke",
+            "aria.top": "Terug boontoe",
+            "aria.menuOpen": "Maak kieslys oop",
+            "aria.menuClose": "Maak kieslys toe",
+            "form.opened": "Jou e-pos behoort nou oop te maak. As niks oopmaak nie, gebruik WhatsApp of die selfoon hierbo.",
+            "form.subject": "Navraag oor ekstra klasse",
+            "form.bodyName": "Naam",
+            "form.bodyPhone": "Selfoon"
+        };
+
+        var EXTRA_EN = {
+            "aria.menuOpen": "Open menu",
+            "aria.menuClose": "Close menu",
+            "form.opened": "Your email app should open now. If nothing opens, use WhatsApp or the phone number above.",
+            "form.subject": "Extra classes enquiry",
+            "form.bodyName": "Name",
+            "form.bodyPhone": "Phone"
+        };
+
+        var WA = {
+            en: "Hi Mieke, I would like to find out about extra classes please.",
+            af: "Hi Mieke, ek wil graag uitvind oor ekstra klasse asseblief."
+        };
+
+        var originals = { text: {}, placeholder: {}, aria: {}, content: {}, alt: {} };
+        var lang = "en";
+
+        function capture() {
+            document.querySelectorAll("[data-i18n]").forEach(function (el) {
+                originals.text[el.getAttribute("data-i18n")] = el.textContent.trim();
+            });
+            document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+                originals.placeholder[el.getAttribute("data-i18n-placeholder")] = el.getAttribute("placeholder");
+            });
+            document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+                originals.aria[el.getAttribute("data-i18n-aria")] = el.getAttribute("aria-label");
+            });
+            document.querySelectorAll("[data-i18n-content]").forEach(function (el) {
+                originals.content[el.getAttribute("data-i18n-content")] = el.getAttribute("content");
+            });
+            document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+                originals.alt[el.getAttribute("data-i18n-alt")] = el.getAttribute("alt");
+            });
+        }
+
+        function t(key) {
+            if (lang === "af") return AF[key];
+            if (originals.text[key] != null) return originals.text[key];
+            if (originals.placeholder[key] != null) return originals.placeholder[key];
+            if (originals.aria[key] != null) return originals.aria[key];
+            if (originals.content[key] != null) return originals.content[key];
+            if (originals.alt[key] != null) return originals.alt[key];
+            return EXTRA_EN[key];
+        }
+
+        function syncMenu() {
+            var open = document.body.classList.contains("nav-open");
+            var btn = document.querySelector(".nav-toggle");
+            if (!btn) return;
+            btn.setAttribute("aria-expanded", open ? "true" : "false");
+            btn.setAttribute("aria-label", open ? t("aria.menuClose") : t("aria.menuOpen"));
+            var icon = btn.querySelector("i");
+            if (icon) icon.className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+        }
+
+        function applyLanguage(next, persist) {
+            lang = next === "af" ? "af" : "en";
+            document.documentElement.lang = lang === "af" ? "af" : "en";
+            document.querySelectorAll("[data-i18n]").forEach(function (el) {
+                var value = t(el.getAttribute("data-i18n"));
+                if (value != null) el.textContent = value;
+            });
+            document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+                var value = t(el.getAttribute("data-i18n-placeholder"));
+                if (value != null) el.setAttribute("placeholder", value);
+            });
+            document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+                var value = t(el.getAttribute("data-i18n-aria"));
+                if (value != null) el.setAttribute("aria-label", value);
+            });
+            document.querySelectorAll("[data-i18n-content]").forEach(function (el) {
+                var value = t(el.getAttribute("data-i18n-content"));
+                if (value != null) el.setAttribute("content", value);
+            });
+            document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+                var value = t(el.getAttribute("data-i18n-alt"));
+                if (value != null) el.setAttribute("alt", value);
+            });
+            document.title = t("meta.title");
+            var ogLocale = document.querySelector('meta[property="og:locale"]');
+            if (ogLocale) ogLocale.setAttribute("content", lang === "af" ? "af_ZA" : "en_ZA");
+            var waHref = "https://wa.me/27649006282?text=" + encodeURIComponent(WA[lang]);
+            document.querySelectorAll("[data-wa]").forEach(function (el) {
+                el.setAttribute("href", waHref);
+            });
+            document.querySelectorAll(".lang-toggle button").forEach(function (btn) {
+                var on = btn.getAttribute("data-lang") === lang;
+                btn.classList.toggle("is-active", on);
+                btn.setAttribute("aria-pressed", on ? "true" : "false");
+            });
+            var status = document.getElementById("form-status");
+            if (status && status.textContent.trim()) status.textContent = t("form.opened");
+            if (persist) {
+                try { localStorage.setItem("mieke-lang", lang); } catch (e) {}
+            }
+            syncMenu();
+        }
+
+        capture();
+
+        document.querySelectorAll(".lang-toggle button").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                applyLanguage(btn.getAttribute("data-lang"), true);
+            });
+        });
+
+        var navToggle = document.querySelector(".nav-toggle");
+        if (navToggle) {
+            navToggle.addEventListener("click", function () {
+                document.body.classList.toggle("nav-open");
+                syncMenu();
+            });
+        }
+        document.querySelectorAll("#nav-menu a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                document.body.classList.remove("nav-open");
+                syncMenu();
+            });
+        });
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                document.body.classList.remove("nav-open");
+                syncMenu();
+            }
+        });
+
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var name = document.getElementById("name").value.trim();
+            var phone = document.getElementById("phone").value.trim();
+            var message = document.getElementById("message").value.trim();
+            var body = t("form.bodyName") + ": " + name + "\n" + t("form.bodyPhone") + ": " + phone + "\n\n" + message;
+            var href = "mailto:miekegrobler03@gmail.com?subject=" + encodeURIComponent(t("form.subject")) + "&body=" + encodeURIComponent(body);
+            document.getElementById("form-status").textContent = t("form.opened");
+            window.location.href = href;
+        });
+
+        var sectionIds = ["home", "about", "photo", "extra-classes", "when-where", "prices", "reviews", "contact"];
+        function highlightNav() {
+            var marker = 110;
+            var found = false;
+            sectionIds.forEach(function (id) {
+                var section = document.getElementById(id);
+                var link = document.querySelector('#nav-menu a[href="#' + id + '"]');
+                if (!section || !link) return;
+                var rect = section.getBoundingClientRect();
+                if (!found && rect.top <= marker && rect.bottom > marker) {
+                    link.classList.add("active");
+                    found = true;
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", highlightNav, { passive: true });
+
+        var saved = null;
+        try { saved = localStorage.getItem("mieke-lang"); } catch (e) {}
+        try {
+            applyLanguage(saved === "af" ? "af" : "en", false);
+            highlightNav();
+        } finally {
+            document.documentElement.classList.remove("lang-pending");
+        }
+    })();
+    </script>
 </body>
 </html>
