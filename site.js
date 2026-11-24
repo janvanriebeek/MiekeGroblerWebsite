@@ -160,7 +160,7 @@ function updateWhatsApp() {
         var count = 0;
         cards.forEach(function (card) {
             var g = card.getAttribute('data-grades');
-            var match = !grade || g === 'all' || g === grade;
+            var match = !grade || g === 'all' || g.split(' ').indexOf(grade) !== -1;
             card.classList.toggle('dim', !match);
             card.classList.toggle('match', !!grade && match);
             if (match) count++;
